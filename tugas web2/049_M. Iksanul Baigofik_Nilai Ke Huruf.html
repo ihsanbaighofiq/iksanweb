@@ -1,0 +1,82 @@
+Index.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <title>Konversi Nilai Angka Menjadi Huruf</title>
+</head>
+<body>
+    <main>
+        <header>
+            <h1>Konversi Nilai Angka Menjadi Huruf</h1>
+        </header>
+        <div class="inputs">
+            <input class="inputNilai" id="nilaiTugas1" type="number" placeholder="Masukkan Nilai Tugas 1">
+            <input class="inputNilai" id="nilaiTugas2" type="number" placeholder="Masukkan Nilai Tugas 2">
+            <input class="inputNilai" id="nilaiTugas3" type="number" placeholder="Masukkan Nilai Tugas 3">
+            
+        </div>
+        <div class="inputs">
+            <input class="btnHitung" type="button" placeholder="Hitung" value="Hitung">
+        </div>
+        <div class="answer">
+            <div class="nilaiAngka"></div>
+            <div class="nilaiHuruf"></div>
+        </div>
+    </main>
+    <script src="script.js" type="text/javascript"></script>
+</body>
+</html>
+
+
+
+
+Script.js
+
+const buttonHitungNilai = document.querySelector(".btnHitung");
+buttonHitungNilai.addEventListener("click", function(){
+    const nilaiTugas1 = document.querySelector("#nilaiTugas1").value;
+    const nilaiTugas2 = document.querySelector("#nilaiTugas2").value;
+    const nilaiTugas3 = document.querySelector("#nilaiTugas3").value;
+
+    const nilaiAkhir = function() {
+        const nilaiAngka = document.querySelector(".nilaiAngka");
+        const hasil = (nilaiTugas1 * 20 / 100) + (nilaiTugas2 * 30 / 100) + (nilaiTugas3 * 50 / 100);
+
+        nilaiAngka.innerHTML = `
+            <div class="box box-1">
+                <p class="box-header">Nilai Angka</p>
+                <div class="nilaiAngka"><h2>${hasil}</h2></div>
+            </div>
+        `;
+
+        const nilaiHuruf = document.querySelector(".nilaiHuruf");
+        let grade;
+        if (hasil > 80 && hasil <= 100 ){
+            grade = 'A';
+        } else if (hasil > 69){
+            grade = 'B';
+        } else if (hasil > 59){
+            grade = 'C';
+        } else if (hasil > 49){
+            grade = 'D';
+        } else {
+            grade = 'E';
+        }
+
+        nilaiHuruf.innerHTML = `
+            <div class="box box-2">
+                <p class="box-header">Nilai Huruf</p>
+                <div class="nilaiHuruf"><h2>${grade}</h2></div>
+            </div>
+        `;
+    }
+    nilaiAkhir();
+});
