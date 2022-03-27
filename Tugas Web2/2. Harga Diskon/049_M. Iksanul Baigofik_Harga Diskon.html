@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <title>Pembelian Barang</title>
+</head>
+<body>
+    <main>
+        <header>
+            <h1>Pembelian Barang</h1>
+        </header>
+        <div class="inputs">
+            <input type="text" name="barang" id="barang" class="input" placeholder="Nama Barang">
+            <input type="number" name="harga" id="harga" class="input" placeholder="Rp Harga">
+            <input type="number" name="jumlah" id="jumlah" class="input" placeholder="Jumlah">
+            <input type="number" name="diskon" id="diskon" class="input" placeholder="Diskon %">
+            <button onclick="hasil()"> Bayar </button>
+        </div>
+        <div class="inputs">
+            <textarea type="number" name="total" id="total" class="input" placeholder="Total Harga"></textarea>
+            <textarea type="number" name="besar" id="besar" class="input" placeholder="Besar Diskon"></textarea>
+            <textarea type="number" name="setelahDiskon" id="setelahDiskon" class="input" placeholder="Harga Setelah Diskon"></textarea>
+        </div>
+    </main>
+    <script src="script.js" type="text/javascript"></script>
+</body>
+</html>
